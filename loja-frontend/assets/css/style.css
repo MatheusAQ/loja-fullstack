@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../image/background\ claro.jpg');
+    background-size: cover;
+    color: white;
+    font-family: 'inter', sans-serif;
+    padding-top: 100px;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1000;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0 0 4px #a0ffff;
+    font-size: 35px;
+}
+
+header a.link {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    margin: 20px;
+}
+
+section {
+    margin-top: 80px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+section h2 span {
+    color: #550cdd;
+    font-weight: bold;
+}
+
+section a {
+    background-color: #000000;
+    color: #0858ec;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #550cdd;
+    font-size: 25px;
+    transition: all 0.3 ease;
+}
+
+section a:hover {
+    box-shadow: 0 0 20px #550cdd;
+
+}
+
+section.produtos {
+    text-align: center;
+}
+
+/* Card de Produtos */
+.produto-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 15px rgba(153, 0, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(153, 0, 255, 0.6);
+}
+
+.produto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.produto-card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.produto-card p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.produto-card button {
+    margin-top: 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid #ff00ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.produto-card button:hover {
+    background: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Area footer */
+footer {
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.socials a img {
+    width: 30px;
+    max-height: 25px;
+    margin: 0 8px
+}
+
+/* Area de adicionar produto */
+
+.adicionar-produto-section {
+    text-align: center;
+    margin-top: 60px;
+    color: white;
+}
+
+.form-adicionar-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-adicionar-produto input,
+.form-adicionar-produto button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a259ff;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.form-adicionar-produto input::placeholder {
+    color: #cccccc;
+}
+
+.form-adicionar-produto button {
+    background-color: #1a1aff;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form-adicionar-produto button:hover {
+    background-color: #3333ff;
+}

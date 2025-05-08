@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja e-commerce</title>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- fonte inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body ng-app="lojaApp" ng-controller="ProductController">
+
+    <header>
+        <h1><a href="#">MAGIC STORE</a></h1>
+        <nav>
+            <a class="link" href="#produtos">Produtos</a>
+            <a class="link" href="./cart.html">Carrinho</a>
+            <a class="link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+        </nav>
+    </header>
+
+
+    <section>
+        <h2><span>Explore </span> o universo<br> de produtos incríveis</h2>
+        <a href="#produtos">Ver Produtos</a>
+    </section>
+    <section class="produtos" id="produtos">
+        <h2>Produtos</h2>
+        <div class="produtos-container">
+
+            <div class="produto-card" ng-repeat="product in products">
+
+                <img ng-src="{{ product.image }}" alt="{{ product.name }}" class="produto-img">
+                <h3>{{ product.name }}</h3>
+                <p>R$ {{ product.price }}</p>
+                <button ng-click="adicionarAoCarrinho(product)">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="adicionar-produto-section" ng-controller="ProductController">
+        <h2>Adicionar Novo Produto</h2>
+
+        <form ng-submit="addProduct()" class="form-adicionar-produto">
+            <input type="text" ng-model="product.name" placeholder="Nome" required />
+            <input type="number" ng-model="product.price" placeholder="Preço" required />
+            <input type="text" ng-model="product.image" placeholder="Imagem (URL)" />
+            <input type="text" ng-model="product.description" placeholder="Descrição" />
+            <button type="submit">Adicionar</button>
+        </form>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 MAGIC STORE • Feito por <strong>Matheus Albuquerque Passos</strong></p>
+            <div class="socials">
+                <a href="#"><img src="./assets/image/logogithubsemfundo.png" alt="GitHub"></a>
+                <a href="#"><img src="./assets/image/LinkedIn_logo_initials.png" alt="Linkedin"></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+        ng-controller="LoginController">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white " id="loginModalLabel">Fazer Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" ng-submit="login(); $event.preventDefault();">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" ng-click="login()">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+        </script>
+
+    <!-- js -->
+    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/adcproduct.js"></script>
+
+
+</body>
+
+</html>
