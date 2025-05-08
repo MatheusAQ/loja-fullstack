@@ -40,7 +40,7 @@ async function main() {
             name: 'Camiseta Nasa',
             price: 130,
             description: 'Camiseta com logo da NASA',
-            image: '/assets/image/camisa nasa.png'  // <- para bater com o HTML
+            image: '/assets/image/camisa nasa.png'  
         }
     ];
 
