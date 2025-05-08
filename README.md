@@ -1,4 +1,4 @@
-ste é um projeto de loja virtual full stack desenvolvido com:
+Este é um projeto de loja virtual full stack desenvolvido com:
 
 Backend**: Node.js + Express + Prisma + SQLite
 Frontend**: HTML, CSS, AngularJS
