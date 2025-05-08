@@ -16,13 +16,16 @@ Pré-requisitos
 1)Clone the repository
 
 2)Install the dependencies
+
   npm install
   
 3)Create the .env
+
   DATABASE_URL="file:./dev.db"
   ACCESS_KEY="minha_chave_secreta"
 
 4)Setup the DataBase
+
   npx prisma migrate dev --name init
   npx prisma db seed
 
