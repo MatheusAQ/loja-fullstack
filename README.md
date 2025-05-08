@@ -13,5 +13,18 @@ Pré-requisitos
 - Node.js (v18 ou superior)
 - npm (v9 ou superior)
 
-npm run dev para dar start 
+Clone the repository
+git clone
+cd loja-backend
+Install the dependencies
+npm install
+Create the .env
+Create a .env file in the root dir and add:
 
+DATABASE_URL="file:./dev.db"
+ACCESS_KEY="minha_chave_secreta"
+Setup the DataBase
+npx prisma migrate dev --name init
+npx prisma db seed
+Run the server
+npm run dev
